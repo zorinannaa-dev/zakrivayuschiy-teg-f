@@ -12,3 +12,199 @@
 
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
+.theme-menu__button:disabled::before {
+  animation: pointer-button 0.5s ease-in-out infinite alternate;
+}
+
+.theme-menu__button:disabled,
+.theme-menu__button:hover,
+.theme-menu__button:focus,
+.theme-menu__button:focus-visible {
+  transition: opacity 0.3s ease;
+}
+
+.theme-menu__button:focus-visible::after {
+  animation: border-button 0.3s ease forwards;
+}
+
+.card__icon-button:focus-visible {
+  border: 2px solid var(--accent-color);
+  transition: border 0.3s;
+  transition-timing-function: ease;
+}
+
+.card__like-button:focus,
+.card__save-button:focus {
+  transition: box-shadow 0.3s;
+  transition-timing-function: ease;
+}
+
+.card__like-button::before,
+.card__save-button::before {
+  transform-origin: 0 0;
+  transform: scaleX(0);
+}
+
+.card__like-button:hover::before,
+.card__save-button:hover::before {
+  animation: button-hide 0.5s ease-in-out forwards;
+}
+
+/* heart animations hover */
+.card__icon-button svg .core {
+  fill: transparent;
+  transition: fill 0.3s 0.03s;
+}
+
+.card__icon-button:hover svg .core {
+  fill: var(--accent-color);
+  transition: fill 0.3s;
+}
+
+.card__icon-button svg .main-body {
+  fill: transparent;
+  transition: fill 0.3s;
+}
+
+.card__icon-button:hover svg .main-body {
+  fill: var(--accent-color);
+  transition: fill 0.3s 0.05s;
+}
+
+/* heart animations active  */
+.card__icon-button svg .core {
+  fill: transparent;
+  transition: fill 0.3s 0.03s;
+}
+
+.card__icon-button:active svg .core {
+  fill: var(--heart-color);
+  transition: fill 0.3s;
+}
+
+.card__icon-button svg .main-body {
+  fill: transparent;
+  transition: fill 0.3s;
+}
+
+.card__icon-button:active svg .main-body {
+  fill: var(--heart-color);
+  transition: fill 0.3s 0.05s;
+}
+
+/* heart animations klick */
+.card__icon-button svg.is-liked .core,
+.card__icon-button svg.is-liked .main-body,
+.card__icon-button svg.is-liked .contour {
+  fill: var(--heart-color);
+}
+
+.card__icon-button:active svg.is-liked .contour {
+  fill: var(--heart-color);
+  transition: fill 0.3s 0.06s;
+}
+
+.card__icon-button:active svg .contour {
+  fill: var(--contour);
+  transition: fill 0.1s;
+}
+
+.card__icon-button svg.is-liked .heart {
+  transform-origin: center;
+  animation: scale 0.3s ease-in 0.1s 1 alternate backwards;
+}
+
+.sparks {
+  opacity: 0;
+}
+
+.card__icon-button svg.is-liked .sparks {
+  animation: sparks-animation 0.3s ease-in 1 alternate backwards;
+}
+
+.life-style {
+  animation: filter-image 3s linear infinite;
+}
+
+.img__watermark:hover .image {
+  animation: rotate-image 2s ease 1, scale-image 1s 2s ease 1;
+}
+
+/* keyframes  */
+@keyframes pointer-button {
+  from {
+    margin-inline-start: -19px;
+  }
+  to {
+    margin-inline-start: -23px;
+  }
+}
+
+@keyframes border-button {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes button-hide {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes scale {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.5);
+  }
+}
+
+@keyframes sparks-animation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes filter-image {
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes rotate-image {
+  from {
+    transform: rotateX(0deg);
+  }
+  to {
+    transform: rotateX(360deg);
+  }
+}
+
+@keyframes scale-image {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.02);
+  }
+}
+
+/* media  */
+@media (prefers-reduced-motion: reduce) {
+  .card__icon-button svg.is-liked .heart,
+  .card__icon-button svg.is-liked .sparks,
+  .img__watermark:hover .image {
+    animation: none;
+  }
+}

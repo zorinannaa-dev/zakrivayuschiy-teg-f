@@ -1,1 +1,34 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  /* fonts */
+  --inter: 'Inter-Variable';
+  --press-start2P: 'PressStart2P';
+  --inter-title-light: 700;
+  --inter-text-light: 400;
+  --inter-title-dark: 785;
+  --inter-text-dark: 465;
+
+  /* background */
+  --background-color-light: #FFF;
+  --background-color-dark: #000;
+  --background-image-light: repeating-linear-gradient(90deg, #d3d3d3, #d3d3d3 2px, transparent 4px), repeating-linear-gradient(180deg, #d3d3d3, #d3d3d3 2px, transparent 4px), linear-gradient(#e7e7e7, #1a1a1a);
+  --background-image-dark: repeating-linear-gradient(90deg, #000, #000 2px, transparent 4px), repeating-linear-gradient(180deg, #000, #000 2px, transparent 4px), linear-gradient(#007f0c, #004306);;
+
+  /* accent color  */
+  --accent-color-light: #000;
+  --accent-color-dark: #00CC14;
+  --color-invers-light: #fff;
+  --color-invers-dark: #00CC14;
+
+  /* size  */
+  --window-width: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
+
+  /* text shadow  */
+  --watermark-shadow-light: #fff;
+  --watermark-shadow-dark: #000;
+
+  /* heart colors  */
+  --contour-light: #000;
+  --contour-dark: #00CC14;
+  --heart-color: #FF0000;
+}
