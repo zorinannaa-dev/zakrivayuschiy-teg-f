@@ -197,7 +197,6 @@ button {
 }
 
 .save-memories {
-  background-color: var(--background-color);
   padding: 49px 34.5px 100px;
   margin: 0 auto;
 }
@@ -225,6 +224,7 @@ svg {
 }
 
 .card__save-button {
+  background-color: var(--background-color);
   position: relative;
   display: flex;
   flex-direction: column;
