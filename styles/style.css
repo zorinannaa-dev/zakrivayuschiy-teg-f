@@ -214,12 +214,10 @@ button {
 }
 
 .floppy__box {
-  mix-blend-mode: difference;
-}
-
-.floppy {
   position: relative;
+  z-index: 1;
   fill: var(--color-invers);
+  mix-blend-mode: difference;
 }
 
 svg {
@@ -276,7 +274,6 @@ svg {
 }
 
 /* dialog window */
-
 dialog {
   background-color: var(--background-color);
   color: var(--accent-color);
@@ -304,6 +301,7 @@ dialog[open] {
 
 dialog .card__save-button {
   margin: 0 0;
+  width: 100%;
 }
 
 dialog .button__text {

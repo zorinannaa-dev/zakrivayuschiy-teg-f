@@ -116,10 +116,6 @@
   animation: filter-image 3s linear infinite;
 }
 
-.img__watermark:hover .image {
-  animation: rotate-image 2s ease 1, scale-image 1s 2s ease 1;
-}
-
 /* keyframes  */
 @keyframes pointer-button {
   from {
@@ -172,29 +168,10 @@
   }
 }
 
-@keyframes rotate-image {
-  from {
-    transform: rotateX(0deg);
-  }
-  to {
-    transform: rotateX(360deg);
-  }
-}
-
-@keyframes scale-image {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(1.02);
-  }
-}
-
 /* media  */
 @media (prefers-reduced-motion: reduce) {
   .card__icon-button svg.is-liked .heart,
-  .card__icon-button svg.is-liked .sparks,
-  .img__watermark:hover .image {
+  .card__icon-button svg.is-liked .sparks {
     animation: none;
   }
 }
