@@ -72,18 +72,8 @@
 }
 
 /* heart animations active  */
-.card__icon-button svg .core {
-  fill: transparent;
-  transition: fill 0.3s 0.03s;
-}
-
 .card__icon-button:active svg .core {
   fill: var(--heart-color);
-  transition: fill 0.3s;
-}
-
-.card__icon-button svg .main-body {
-  fill: transparent;
   transition: fill 0.3s;
 }
 
