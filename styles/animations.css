@@ -13,7 +13,7 @@
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
 .theme-menu__button:disabled::before {
-  animation: pointer-button 0.5s ease-in-out infinite alternate;
+  animation: pointer-moves-left 0.5s ease-in-out infinite alternate;
 }
 
 .theme-menu__button:disabled,
@@ -24,19 +24,17 @@
 }
 
 .theme-menu__button:focus-visible::after {
-  animation: border-button 0.3s ease forwards;
+  animation: paints-underline-line 0.3s ease forwards;
 }
 
 .card__icon-button:focus-visible {
   border: 2px solid var(--accent-color);
-  transition: border 0.3s;
-  transition-timing-function: ease;
+  transition: border 0.3s ease;
 }
 
 .card__like-button:focus,
 .card__save-button:focus {
-  transition: box-shadow 0.3s;
-  transition-timing-function: ease;
+  transition: box-shadow 0.3s ease;
 }
 
 .card__like-button::before,
@@ -47,77 +45,86 @@
 
 .card__like-button:hover::before,
 .card__save-button:hover::before {
-  animation: button-hide 0.5s ease-in-out forwards;
+  animation: hide-button-in-element 0.5s ease-in-out forwards;
 }
 
-/* heart animations hover */
-.card__icon-button svg .core {
-  fill: transparent;
-  transition: fill 0.3s 0.03s;
-}
-
-.card__icon-button:hover svg .core {
-  fill: var(--accent-color);
-  transition: fill 0.3s;
-}
-
-.card__icon-button svg .main-body {
-  fill: transparent;
-  transition: fill 0.3s;
-}
-
-.card__icon-button:hover svg .main-body {
-  fill: var(--accent-color);
-  transition: fill 0.3s 0.05s;
-}
-
-/* heart animations active  */
-.card__icon-button:active svg .core {
-  fill: var(--heart-color);
-  transition: fill 0.3s;
-}
-
-.card__icon-button:active svg .main-body {
-  fill: var(--heart-color);
-  transition: fill 0.3s 0.05s;
-}
-
-/* heart animations klick */
-.card__icon-button svg.is-liked .core,
-.card__icon-button svg.is-liked .main-body,
-.card__icon-button svg.is-liked .contour {
-  fill: var(--heart-color);
-}
-
-.card__icon-button:active svg.is-liked .contour {
-  fill: var(--heart-color);
-  transition: fill 0.3s 0.06s;
-}
-
-.card__icon-button:active svg .contour {
-  fill: var(--contour);
-  transition: fill 0.1s;
-}
-
-.card__icon-button svg.is-liked .heart {
-  transform-origin: center;
-  animation: scale 0.3s ease-in 0.1s 1 alternate backwards;
-}
-
+/* heart animations relaxed */
 .sparks {
   opacity: 0;
 }
 
-.card__icon-button svg.is-liked .sparks {
-  animation: sparks-animation 0.3s ease-in 1 alternate backwards;
+.like-icon .core {
+  fill: transparent;
+  transition: fill 0.3s 0.03s linear;
 }
 
+.like-icon .main-body {
+  fill: transparent;
+  transition: fill 0.3s linear;
+}
+
+.like-icon .contour {
+  fill: var(--contour);
+  transition: fill 0.3s linear;
+}
+
+/* heart animations hover */
+.like-icon:hover .core {
+  fill: var(--accent-color);
+  transition: fill 0.3s linear;
+}
+
+.like-icon:hover .main-body {
+  fill: var(--accent-color);
+  transition: fill 0.3s 0.05s linear;
+}
+
+/* heart animations active  */
+.like-icon:active .core {
+  fill: var(--heart-color);
+  transition: fill 0.3s linear;
+}
+
+.like-icon:active .main-body {
+  fill: var(--heart-color);
+  transition: fill 0.3s 0.05s linear;
+}
+
+/* heart animations klick */
+.like-icon.is-liked .contour,
+.like-icon.is-liked .core,
+.like-icon.is-liked .main-body {
+  fill: var(--heart-color);
+}
+
+.like-icon.is-liked .contour {
+  transition: fill 0.3s 0.06s linear;
+}
+
+.like-icon.is-liked .main-body {
+  transition: fill 0.3s 0.05s linear;
+}
+
+.like-icon.is-liked .core {
+  transition: fill 0.3s linear;
+}
+
+.like-icon.is-liked .heart {
+  transform-origin: center;
+  animation: make-heart-bigger 0.3s ease-in 0.1s 1 alternate;
+}
+
+.like-icon.is-liked .sparks {
+  animation: show-sparks 0.3s 0.3s ease-in 1 alternate;
+}
+
+/* filter animations */
 .life-style {
-  animation: filter-image 3s linear infinite;
+  animation: rotate-color-filter 3s linear infinite;
 }
 
 /* keyframes  */
-@keyframes pointer-button {
+@keyframes pointer-moves-left {
   from {
     margin-inline-start: -19px;
   }
@@ -126,7 +133,7 @@
   }
 }
 
-@keyframes border-button {
+@keyframes paints-underline-line {
   from {
     transform: scaleX(0);
   }
@@ -135,7 +142,7 @@
   }
 }
 
-@keyframes button-hide {
+@keyframes hide-button-in-element {
   from {
     transform: scaleX(0);
   }
@@ -144,7 +151,7 @@
   }
 }
 
-@keyframes scale {
+@keyframes make-heart-bigger {
   from {
     transform: scale(1);
   }
@@ -153,7 +160,7 @@
   }
 }
 
-@keyframes sparks-animation {
+@keyframes show-sparks {
   from {
     opacity: 0;
   }
@@ -162,7 +169,7 @@
   }
 }
 
-@keyframes filter-image {
+@keyframes rotate-color-filter {
   to {
     filter: hue-rotate(360deg);
   }
