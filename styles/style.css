@@ -15,37 +15,37 @@
 */
 
 .page {
-  min-inline-size: 320px;
-  min-block-size: 100dvb;
+  color: var(--accent-color);
   font-family: var(--inter), "Arial", sans-serif;
-  font-variation-settings: "wght" var(--main-text-weight);
-  background-image: var(--background-image);
   background-color: var(--background-color);
+  background-image: var(--background-image);
   background-size: cover;
   background-attachment: fixed;
-  color: var(--accent-color);
+  min-inline-size: 320px;
+  min-block-size: 100dvb;
+  font-variation-settings: "wght" var(--main-text-weight);
 }
 
 .header {
-  margin: 0 auto;
-  padding-block-start: clamp(7.5rem, 6.25rem + 4vw, 8.5rem);
-  background-color: var(--background-color);
-  margin-block-start: 100px;
-  border: 2px solid var(--accent-color);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
+  gap: 24px;
   width: 100%;
+  margin: 0 auto;
+  margin-block-start: 100px;
+  border: 2px solid var(--accent-color);
+  padding-block-start: clamp(7.5rem, 6.25rem + 4vw, 8.5rem);
   padding-block-end: 25px;
   font-family: var(--press-start2P), "Arial", sans-serif;
-  gap: 24px;
   text-transform: uppercase;
+  background-color: var(--background-color);
 }
 
 .main-title {
-  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   padding-inline: clamp(0.875rem, -1.4688rem + 10vw, 7.53125rem);
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   text-decoration: none;
 }
 
@@ -60,8 +60,8 @@
 .theme-menu__list {
   display: flex;
   flex-direction: column;
-  gap: 11px;
   align-items: flex-start;
+  gap: 11px;
   margin-inline-start: 20px;
 }
 
@@ -94,19 +94,19 @@
   content: "";
   position: absolute;
   inset: 0px auto 0px 5px;
-  border-bottom: 1.5px solid currentColor;
   width: 88%;
-  transform-origin: 0 0;
+  border-bottom: 1.5px solid currentColor;
   transform: scaleX(0);
+  transform-origin: 0 0;
 }
 
 .arcticle {
-  margin-inline: auto;
   display: flex;
   flex-direction: column;
   width: 100%;
-  background-color: var(--background-color);
+  margin-inline: auto;
   margin-block-end: 50px;
+  background-color: var(--background-color);
 }
 
 .arcticle:first-child {
@@ -119,40 +119,40 @@
 
 .arcticle-title {
   border: 2px solid var(--accent-color);
-  font-size: 18px;
-  font-variation-settings: "wght" var(--title-weight);
   padding-inline: 10px;
   padding-block-start: 5px;
+  font-size: 18px;
   line-height: 22px;
   letter-spacing: 0.2px;
+  font-variation-settings: "wght" var(--title-weight);
 }
 
 .arcticle__img-watermark {
   position: relative;
-  border: 2px solid var(--accent-color);
   width: 100%;
-  aspect-ratio: 1 / 1;
+  border: 2px solid var(--accent-color);
   perspective: 1000px;
+  aspect-ratio: 1 / 1;
 }
 
 .image {
   position: relative;
-  height: 101%;
+  display: block;
   max-width: 100%;
+  height: 101%;
   object-fit: cover;
   object-position: center;
-  display: block;
 }
 
 .watermark {
   position: absolute;
   inset: 25px 25px auto auto;
+  color: var(--accent-color);
   font-family: var(--press-start2P), "Arial", sans-serif;
   font-size: 14px;
-  color: var(--accent-color);
-  mix-blend-mode: hard-light;
   text-shadow: 1px 1px var(--watermark-shadow),
     -1px -1px var(--watermark-shadow);
+  mix-blend-mode: hard-light;
 }
 
 .content {
@@ -167,55 +167,55 @@
 }
 
 .paragraph {
-  text-align: left;
   font-size: 18px;
   line-height: 21px;
   letter-spacing: 0.6px;
+  text-align: left;
 }
 
 .buttons-box {
   display: flex;
   flex-direction: row;
-  align-items: stretch;
   justify-content: flex-end;
+  align-items: stretch;
   gap: 3px;
+  margin-inline-end: 25px;
   margin-block-start: 24px;
   margin-block-end: 26px;
-  margin-inline-end: 25px;
 }
 
 .button {
-  background-color: var(--background-color);
-  font-family: var(--press-start2P), "Arial", sans-serif;
-  cursor: pointer;
-  font-size: 14px;
-  border: 2px solid var(--accent-color);
-  text-align: center;
   position: relative;
+  border: 2px solid var(--accent-color);
+  font-family: var(--press-start2P), "Arial", sans-serif;
+  font-size: 14px;
+  text-align: center;
+  background-color: var(--background-color);
+  cursor: pointer;
 }
 
 .card__like-button {
+  min-inline-size: 130px;
   padding: 11px;
   line-height: 90%;
-  width: 130px;
 }
 
 .save-memories {
-  padding: 49px 34.5px 100px;
   margin: 0 auto;
+  padding: 49px 34.5px 100px;
 }
 
 .card__icon-button {
-  border: 2px solid transparent;
   width: 43px;
+  border: 2px solid transparent;
 }
 
 .floppy__box {
   position: relative;
   z-index: 1;
+  height: 100%;
   fill: var(--color-invers);
   mix-blend-mode: difference;
-  height: 100%;
 }
 
 svg {
@@ -225,11 +225,11 @@ svg {
 .card__save-button {
   display: flex;
   flex-direction: column;
-  gap: 7px;
   align-items: center;
-  padding-inline: 18px;
-  padding-block: 8px;
+  gap: 7px;
   margin: 0 auto;
+  padding-inline: 18px;
+  padding-block: 12px;
 }
 
 .card__save-button svg {
@@ -238,9 +238,9 @@ svg {
 
 .button__text {
   position: relative;
+  color: var(--color-invers);
   font-size: 14px;
   mix-blend-mode: difference;
-  color: var(--color-invers);
 }
 
 .put-floppy {
@@ -264,9 +264,9 @@ svg {
 .card__save-button::before {
   content: "";
   position: absolute;
+  inset: 0px auto 0px 0px;
   width: 100%;
   background-color: var(--accent-color);
-  inset: 0px auto 0px 0px;
 }
 
 .like-icon {
@@ -276,19 +276,21 @@ svg {
 
 /* dialog window */
 dialog {
-  background-color: var(--background-color);
-  color: var(--accent-color);
-  width: clamp(21.3125rem, 21.0484rem + 1.1268vw, 22.0625rem);
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  padding: 30px 40px;
   gap: 30px;
+  width: clamp(21.3125rem, 21.0484rem + 1.1268vw, 22.0625rem);
+  padding: 30px 40px;
+  color: var(--accent-color);
+  background-color: var(--background-color);
+  position: fixed;
+  inset: 0;
 }
 
 dialog:not([open]) {
-  pointer-events: none;
   opacity: 0;
+  pointer-events: none;
 }
 
 dialog::backdrop {
@@ -297,14 +299,14 @@ dialog::backdrop {
 
 .dialog-text {
   font-family: var(--press-start2P), "Arial", sans-serif;
-  text-transform: uppercase;
   font-size: 14px;
   line-height: 150%;
+  text-transform: uppercase;
 }
 
 dialog .card__save-button {
-  margin: 0 0;
   width: 100%;
+  margin: 0 0;
 }
 
 dialog .button__text {
@@ -376,7 +378,6 @@ dialog svg {
     justify-content: center;
     align-items: center;
     gap: 9px;
-    padding: 15px 20px;
   }
 
   dialog {
@@ -390,9 +391,9 @@ dialog svg {
     (-webkit-text-stroke: 1px var(--watermark-shadow))
 ) {
   .watermark {
+    text-shadow: none;
     -webkit-text-stroke: 1px var(--watermark-shadow);
     text-stroke: 1px var(--watermark-shadow);
-    text-shadow: none;
   }
 }
 

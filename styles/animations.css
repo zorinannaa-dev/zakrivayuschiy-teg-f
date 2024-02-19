@@ -39,8 +39,8 @@
 
 .card__like-button::before,
 .card__save-button::before {
-  transform-origin: 0 0;
   transform: scaleX(0);
+  transform-origin: 0 0;
 }
 
 .card__like-button:hover::before,
